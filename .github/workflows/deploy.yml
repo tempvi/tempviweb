@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to tempvi.github.io (gh-pages branch)
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_IO_TOKEN }}
+        deploy_key: ${{ secrets.GH_IO_TOKEN }}
         external_repository: tempvi/tempvi.github.io
         publish_branch: gh-pages
         publish_dir: dist/tempviweb/browser
