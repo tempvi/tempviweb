@@ -28,4 +28,5 @@ jobs:
       with:
         publish_branch: gh-pages
         publish_dir: dist/tempviweb/browser
+        external_repository: tempvi/tempvi.github.io
         github_token: ${{ secrets.PAT_TOKEN }}
