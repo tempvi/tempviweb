@@ -2,14 +2,15 @@ name: Build and Deploy to tempvi.github.io (gh-pages)
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout tempviweb repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Set up Node.js
@@ -26,6 +27,7 @@ jobs:
     - name: Deploy to tempvi.github.io (gh-pages branch)
       uses: peaceiris/actions-gh-pages@v3
       with:
+        github_token: ${{ secrets.GH_IO_TOKEN }}
+        external_repository: tempvi/tempvi.github.io
         publish_branch: gh-pages
         publish_dir: dist/tempviweb/browser
-        github_token: ${{ secrets.GH_IO_TOKEN }}
